@@ -28,7 +28,7 @@ public class Mandelbrot extends FractalGenerator {
         int iterator = 0;
         ComplexNumber c = new ComplexNumber(x, y);
         ComplexNumber z = z0;
-        while (z.getAbc2() <= 2.0d * 2.0d || iterator < MAX_ITERATIONS) {
+        while (z.getAbc2() <= 2.0d * 2.0d && iterator < MAX_ITERATIONS) {
             z = z.pow2();
             z.add(c);
             iterator++;
