@@ -10,6 +10,7 @@
 
     <modules>
         <module>lab4-drawing-fractals</module>
+        <module>lab5-selecting-and-saving-fractal</module>
     </modules>
 
     <packaging>pom</packaging>
