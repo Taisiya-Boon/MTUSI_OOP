@@ -84,12 +84,12 @@ public class FractalExplorer {
                     sizeDisplay, e.getY());
 
             fractal.recenterAndZoomRange(range, xCoord, yCoord, 0.5d);
-            imageDisplay.repaint();
+            drawFractal();
         }
     }
 
     public static void main(String[] args) {
-        FractalExplorer fractalExplorer = new FractalExplorer(400);
+        FractalExplorer fractalExplorer = new FractalExplorer(800);
         fractalExplorer.createAndShowGUI();
         fractalExplorer.drawFractal();
     }

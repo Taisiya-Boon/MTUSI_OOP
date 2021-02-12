@@ -1,7 +1,5 @@
 package ru.mtusi;
 
-import lombok.Getter;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -18,8 +16,7 @@ public class JImageDisplay extends JComponent {
         super.setPreferredSize(new Dimension(width, height));
     }
 
-    @Override
-    public void paintComponents(Graphics g) {
+    public void paintComponent(Graphics g) {
         super.paintComponents(g);
 
         g.drawImage(image, 0, 0, image.getWidth(), image.getHeight(), null);

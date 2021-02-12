@@ -21,8 +21,6 @@ public class Mandelbrot extends FractalGenerator {
         range.y = -1.5d;
         range.width = 3.0d;
         range.height = 3.0d;
-
-        logger.info("initial range");
     }
 
     @Override
@@ -30,7 +28,8 @@ public class Mandelbrot extends FractalGenerator {
         int iterator = 0;
         ComplexNumber c = new ComplexNumber(x, y);
         ComplexNumber z = z0;
-        while (z.getAbc2() <= 4 || iterator < MAX_ITERATIONS) {
+        while (z.getAbc2() <= 2.0d * 2.0d || iterator < MAX_ITERATIONS) {
+            z = z.pow2();
             z.add(c);
             iterator++;
         }
@@ -55,6 +54,11 @@ public class Mandelbrot extends FractalGenerator {
         public void add(ComplexNumber complexNumber) {
             this.Im += complexNumber.getIm();
             this.Re += complexNumber.getRe();
+        }
+
+        public ComplexNumber pow2() {
+            return new ComplexNumber(this.Re * this.Re - this.Im * this.Im,
+                    2d * this.Re * this.Im);
         }
 
     }
